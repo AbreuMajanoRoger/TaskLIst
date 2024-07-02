@@ -7,31 +7,84 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/btnAgregar"
+        android:layout_marginStart="5dp"
+        android:text="Agregar"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnActualizar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineHorizontalDos"
+        />
+
+
+    <Button
+        android:id="@+id/btnActualizar"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:text="Actualizar"
+        app:layout_constraintStart_toEndOf="@+id/btnAgregar"
+        app:layout_constraintEnd_toStartOf="@+id/btnEliminar"
+        app:layout_constraintTop_toTopOf="@id/guidelineHorizontalDos" />
+
+    <Button
+        android:id="@+id/btnEliminar"
+        android:text="Eliminar"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/btnActualizar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineHorizontalDos" />
+
+    <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TAREAS"
+        android:textSize="24sp"/>
+
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="623dp" />
+        app:layout_constraintGuide_begin="40dp" />
+
+    <EditText
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/editText"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineHorizontalDos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineVertical"
+        android:id="@+id/guidelineHorizontalDos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="315dp" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="122dp" />
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:src="@drawable/add_icon"
-        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal"
-        app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontalTres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="339dp"
-        tools:layout_editor_absoluteY="648dp" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="190dp" />
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
