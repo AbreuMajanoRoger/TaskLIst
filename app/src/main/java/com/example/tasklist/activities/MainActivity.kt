@@ -9,11 +9,10 @@ import com.example.tasklist.adapters.TareaAdapter
 import com.example.tasklist.data.Tarea
 import com.example.tasklist.data.TareaDB
 
-import com.example.tasklist.utils.MydatabaseHelper
 import com.example.tasklist.databinding.ActivityMainBinding
-import com.exampletasklist.activities.TareaActivity
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: TareaAdapter
     private lateinit var tareaList: List<Tarea>
@@ -26,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         tareaDB = TareaDB(this)
 
-        adapter = TareaAdapter = TareaAdapter(emptyList(), {
+        adapter =TareaAdapter(emptyList(), {
             Toast.makeText(this, "Click en tarea: ${tareaList[it].name}", Toast.LENGTH_SHORT).show()
         }, {
             tareaDB.delete(tareaList[it])

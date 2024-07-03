@@ -7,7 +7,7 @@ import com.example.tasklist.data.Tarea
 import com.example.tasklist.databinding.ItemTareaBinding
 
 class TareaAdapter (
-    private var dataSet: List<Tarea> = emptyList()
+    private var dataSet: List<Tarea> = emptyList(),
     private val onItemClickListener: (Int) -> Unit,
     private val onItemDeleteClickListener: (Int) -> Unit,
     private val onItemCheckedClickListener: (Int) -> Unit
@@ -18,6 +18,8 @@ class TareaAdapter (
         }
 
         override fun getItemCount(): Int = dataSet.size
+
+
 
         override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
             holder.render(dataSet[position])
@@ -42,9 +44,9 @@ class TareaAdapter (
 
     class TaskViewHolder(val binding: ItemTareaBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun render(task: Tarea) {
-            binding.nameTextView.text = task.name
-            binding.doneCheckBox.isChecked = task.done
+        fun render(tarea: Tarea) {
+            binding.nameTextView.text = tarea.name
+            binding.doneCheckBox.isChecked = tarea.done
         }
 
 }

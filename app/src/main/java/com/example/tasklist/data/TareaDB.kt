@@ -39,10 +39,10 @@ class TareaDB (context:Context) {
         db.close()
     }
 
-    fun delete(task: Tarea) {
+    fun delete(tarea: Tarea) {
         val db = databaseManager.writableDatabase
 
-        val deletedRows = db.delete(Tarea.TABLE_NAME, "${BaseColumns._ID} = ${task.id}", null)
+        val deletedRows = db.delete(Tarea.TABLE_NAME, "${BaseColumns._ID} = ${tarea.id}", null)
 
         db.close()
     }
@@ -89,17 +89,17 @@ class TareaDB (context:Context) {
             "${Tarea.COLUMN_NAME_DONE} ASC"                             // The sort order
         )
 
-        var tasks = mutableListOf<Tarea>()
+        var tarea = mutableListOf<Tarea>()
         while (cursor.moveToNext()) {
             val id = cursor.getInt(cursor.getColumnIndexOrThrow(BaseColumns._ID))
             val name = cursor.getString(cursor.getColumnIndexOrThrow(Tarea.COLUMN_NAME_TITLE))
             val done = cursor.getInt(cursor.getColumnIndexOrThrow(Tarea.COLUMN_NAME_DONE)) == 1
             val task = Tarea(id, name, done)
-            tasks.add(task)
+            tarea.add(task)
         }
         cursor.close()
         db.close()
-        return tasks
+        return tarea
     }
 
 

@@ -1,4 +1,4 @@
-package com.exampletasklist.activities
+package com.example.tasklist.activities
 
 import android.os.Bundle
 import android.widget.Toast
@@ -21,8 +21,8 @@ class TareaActivity : AppCompatActivity() {
 
         binding.saveButton.setOnClickListener {
             val taskName = binding.nameEditText.text.toString()
-            val task = Tarea(-1, taskName)
-            tareaDB.insert(task)
+            val tarea = Tarea(-1, taskName)
+            tareaDB.insert(tarea)
             Toast.makeText(this, "Tarea guardad correctamente", Toast.LENGTH_SHORT).show()
             finish()
         }
